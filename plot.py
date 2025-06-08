@@ -12,7 +12,6 @@ lambda_ = 550e-9  # wavelength (m)
 y = np.linspace(-0.021, 0.021, 2000)
 theta = np.arctan(y / L)
 
------------ # Physics --------------------
 #Interference 
 alpha = np.pi * s * np.sin(theta) / lambda_  # for interference
 beta = np.pi * a * np.sin(theta) / lambda_   # for diffraction
@@ -54,7 +53,7 @@ order_label_added = False
 minima_label_added = False
 for m, y_m in zip(m_orders, maxima_y_mm):
     if np.abs(y_m) <= y_mm[-1]:
-        # Add legend label only once
+        # Add legend label
         if not order_label_added:
             ax1.axvline(y_m, color='gray', linestyle='--', alpha=0.3, label='Interference Maxima (order $m$)')
             order_label_added = True
